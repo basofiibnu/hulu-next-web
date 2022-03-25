@@ -13,7 +13,7 @@ import HeaderItem from './HeaderItem';
 
 const Header = () => {
   return (
-    <header className="m-5 flex h-auto flex-col items-center justify-between sm:flex-row">
+    <header className="mt-5 mb-0 flex h-auto flex-col items-center justify-between sm:flex-row">
       <div className="flex max-w-2xl flex-grow justify-evenly">
         <HeaderItem title="Home" Icon={HomeIcon} />
         <HeaderItem title="Trending" Icon={LightningBoltIcon} />
