@@ -8,12 +8,12 @@ import movieRequests from '../utils/fetchApi';
 
 const Home = ({ results }) => {
   return (
-    <div className="">
+    <div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="mx-auto max-w-screen-xl">
+      <div>
         <Header />
         <Nav />
         <Results data={results} />
