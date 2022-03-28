@@ -16,7 +16,6 @@ const DetailContent = ({ data }) => {
     const response = await fetch(baseUrl);
     const res = await response.json();
     setSimilarMovies(res.results);
-    console.log(res);
 
     setLoading(false);
   };

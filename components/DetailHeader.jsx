@@ -1,8 +1,6 @@
 import React from 'react';
 
 const DetailHeader = ({ data }) => {
-  console.log(data);
-  console.log(process.env.NEXT_PUBLIC_TMDB_API_KEY);
   const releaseDate = data.release_date.split('-');
   if (!data) return <p>No data</p>;
 
