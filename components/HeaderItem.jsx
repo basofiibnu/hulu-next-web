@@ -7,7 +7,7 @@ const HeaderItem = ({ title, Icon, onClick }) => {
       onClick={onClick}
     >
       <Icon className="mb-1 h-8 group-hover:animate-bounce" />
-      <p className="text-sm uppercase tracking-widest opacity-0 group-hover:opacity-100">
+      <p className="hidden text-sm uppercase tracking-widest opacity-0 group-hover:opacity-100 md:hidden lg:block">
         {title}
       </p>
     </div>
