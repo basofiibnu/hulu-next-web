@@ -5,6 +5,14 @@ export default {
     title: 'Trending',
     url: `/trending/all/week?api_key=${apiKey}&language=en-US&sort_by=popularity.desc`,
   },
+  fetchAiring: {
+    title: 'Airing Now',
+    url: `/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`,
+  },
+  fetchUpcoming: {
+    title: 'Upcoming',
+    url: `/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`,
+  },
   fetchTopRated: {
     title: 'Top Rated',
     url: `/movie/top_rated?api_key=${apiKey}&language=en-US&sort_by=popularity.desc`,

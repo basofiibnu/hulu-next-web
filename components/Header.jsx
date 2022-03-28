@@ -1,34 +1,69 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { Fragment, useState } from 'react';
 import {
-  BadgeCheckIcon,
-  CollectionIcon,
+  BookmarkIcon,
   HomeIcon,
   LightningBoltIcon,
   SearchIcon,
   UserIcon,
+  VideoCameraIcon,
 } from '@heroicons/react/outline';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import HeaderItem from './HeaderItem';
+import SearchModal from './SearchModal';
 
 const Header = () => {
+  const [displayModal, setDisplayModal] = useState(false);
+  const router = useRouter();
   return (
-    <header className="mt-5 mb-0 flex h-auto flex-col items-center justify-between sm:flex-row">
-      <div className="flex max-w-2xl flex-grow justify-evenly">
-        <HeaderItem title="Home" Icon={HomeIcon} />
-        <HeaderItem title="Trending" Icon={LightningBoltIcon} />
-        <HeaderItem title="Verified" Icon={BadgeCheckIcon} />
-        <HeaderItem title="Collections" Icon={CollectionIcon} />
-        <HeaderItem title="Search" Icon={SearchIcon} />
-        <HeaderItem title="Account" Icon={UserIcon} />
-      </div>
-      <Image
-        src="https://press.hulu.com/wp-content/uploads/2020/02/hulu-white.png"
-        width={200}
-        height={100}
-        className="object-contain"
-      />
-    </header>
+    <Fragment>
+      <header className="mb-0 mt-5 flex h-auto flex-col items-center justify-between sm:flex-row">
+        <div className="flex max-w-2xl flex-grow justify-evenly">
+          <HeaderItem
+            title="Home"
+            Icon={HomeIcon}
+            onClick={() => router.push(`/`)}
+          />
+          <HeaderItem
+            title="Trending"
+            Icon={LightningBoltIcon}
+            onClick={() => router.push(`/?genre=fetchTrending`)}
+          />
+          <HeaderItem
+            title="Airing Now"
+            Icon={VideoCameraIcon}
+            onClick={() => router.push(`/?genre=fetchAiring`)}
+          />
+          <HeaderItem
+            title="Upcoming"
+            Icon={BookmarkIcon}
+            onClick={() => router.push(`/?genre=fetchUpcoming`)}
+          />
+          <HeaderItem
+            title="Search"
+            Icon={SearchIcon}
+            onClick={() => setDisplayModal(true)}
+          />
+          <HeaderItem title="Account" Icon={UserIcon} />
+        </div>
+        <Link href="/">
+          <Image
+            src="https://press.hulu.com/wp-content/uploads/2020/02/hulu-white.png"
+            width={150}
+            height={75}
+            className="cursor-pointer object-contain"
+          />
+        </Link>
+      </header>
+      {displayModal && (
+        <SearchModal
+          showModal={displayModal}
+          setShowModal={setDisplayModal}
+        />
+      )}
+    </Fragment>
   );
 };
 
