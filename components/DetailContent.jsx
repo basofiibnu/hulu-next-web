@@ -110,11 +110,11 @@ const DetailContent = ({ data }) => {
                     <p className="text-md mb-3 font-light">
                       {data.overview}
                     </p>
-                    <div className="mb-1 flex flex-row items-center gap-2">
+                    <div className="mb-3 flex flex-col items-start gap-1 md:mb-1 md:flex-row md:items-center md:gap-2">
                       <p className="text-md font-bold">
                         Starring By:
                       </p>
-                      <p className="text-md flex flex-row items-center gap-2">
+                      <p className="text-md flex flex-col items-start gap-1 md:flex-row md:items-center md:gap-2">
                         {data.credits.cast
                           .slice(0, 3)
                           .map((person) => (
@@ -122,29 +122,29 @@ const DetailContent = ({ data }) => {
                           ))}
                       </p>
                     </div>
-                    <div className="mb-1">
+                    <div className="mb-3 flex flex-col gap-1 md:mb-1 md:flex-row md:gap-2">
                       {data.credits.crew.slice(0, 1).map((crew) => (
-                        <p className="text-md">
-                          <span className="font-bold">
+                        <>
+                          <span className="text-md font-bold">
                             {crew.department} By:{' '}
                           </span>
-                          <span className="font-light">
+                          <span className="text-md font-light">
                             {crew.name}
                           </span>
-                        </p>
+                        </>
                       ))}
                     </div>
-                    <div className="text-md mb-1 flex flex-row gap-2 font-light">
+                    <div className="text-md mb-3 flex flex-col gap-1 font-light md:mb-1 md:flex-row md:gap-2">
                       <p className="font-bold">Genres: </p>
                       {data.genres.map((genre) => (
                         <p>{genre.name}</p>
                       ))}
                     </div>
-                    <div className="text-md mb-1 flex flex-row gap-2 font-light">
+                    <div className="text-md mb-3 flex flex-col gap-1 font-light md:mb-1 md:flex-row md:gap-2">
                       <p className="font-bold">Release Date: </p>
                       <p>{data.release_date}</p>
                     </div>
-                    <div className="text-md mb-1 flex flex-row gap-2 font-light">
+                    <div className="text-md mb-3 flex flex-col gap-1 font-light md:mb-1 md:flex-row md:gap-2">
                       <p className="font-bold">
                         Original Languages:{' '}
                       </p>
@@ -152,7 +152,7 @@ const DetailContent = ({ data }) => {
                         {data.original_language}
                       </p>
                     </div>
-                    <div className="text-md mb-1 flex flex-row gap-1 font-light">
+                    <div className="text-md mb-3 flex flex-col gap-1 font-light md:mb-1 md:flex-row">
                       <p className="font-bold">Produced By: </p>
                       {data.production_companies
                         .slice(0, 3)
@@ -161,7 +161,7 @@ const DetailContent = ({ data }) => {
                         ))}
                     </div>
                     {data.homepage && (
-                      <div className="text-md mb-1 flex flex-row gap-2 font-light">
+                      <div className="text-md mb-1 flex flex-col gap-1 font-light md:flex-row md:gap-2">
                         <p className="font-bold">
                           Official Website:{' '}
                         </p>
