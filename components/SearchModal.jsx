@@ -8,7 +8,7 @@ const SearchModal = ({ showModal, setShowModal }) => {
   return (
     <Fragment>
       <div className="fixed top-0 z-50 mx-auto h-screen w-screen bg-black/70">
-        <div className="absolute left-1/3 top-[30vh]">
+        <div className="absolute top-[30vh] md:left-1/4 lg:left-1/3">
           <div class="border-1 container mx-auto max-h-80 w-auto max-w-md rounded-lg border-gray-500 bg-gray-800 p-6">
             <div className="flex min-w-[400px] max-w-2xl items-center justify-between pb-5">
               <div className="text-lg font-semibold text-white">
